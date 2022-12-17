@@ -56,13 +56,11 @@ new_keys:      .res 2
   jsr draw_bg
   
   ; Set up game variables, as if it were the start of a new level.
-  jsr init_player
 
 forever:
 
   ; Game logic
   jsr read_pads
-  jsr move_player
 
   ; The first entry in OAM (indices 0-3) is "sprite 0".  In games
   ; with a scrolling playfield and a still status bar, it's used to
@@ -71,7 +69,6 @@ forever:
   ldx #4
   stx oam_used
   ; adds to oam_used
-  jsr draw_player_sprite
   ldx oam_used
   jsr ppu_clear_oam
 
@@ -118,7 +115,7 @@ copypalloop:
 .segment "RODATA"
 initial_palette:
   .byt $22,$18,$28,$38,$0F,$06,$16,$26,$0F,$08,$19,$2A,$0F,$02,$12,$22
-  .byt $22,$08,$16,$37,$0F,$06,$16,$26,$0F,$0A,$1A,$2A,$0F,$02,$12,$22
+  .byt $0F,$08,$16,$37,$0F,$06,$16,$26,$0F,$0A,$1A,$2A,$0F,$02,$12,$22 ; Background Palette
 
 ; Include the CHR ROM data
 .segment "CHR"

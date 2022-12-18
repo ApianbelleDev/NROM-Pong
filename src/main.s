@@ -114,10 +114,7 @@ copypalloop:
 
 .segment "RODATA"
 initial_palette:
-  .byt $22,$18,$28,$38,$0F,$06,$16,$26,$0F,$08,$19,$2A,$0F,$02,$12,$22
-  .byt $0F,$08,$16,$37,$0F,$06,$16,$26,$0F,$0A,$1A,$2A,$0F,$02,$12,$22 ; Background Palette
+  .byt $0F,$0F,$0F,$0F,$0F,$0F,$0F,$0F,$0F,$0F,$0F,$0F,$0F,$0F,$0F,$0F ; Background Palette
 
 ; Include the CHR ROM data
 .segment "CHR"
-  .incbin "obj/nes/bggfx.chr"
-  .incbin "obj/nes/spritegfx.chr"

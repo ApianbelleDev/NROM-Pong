@@ -16,7 +16,7 @@
   bit SNDCHN      ; Acknowledge DMC IRQ
   lda #$40
   sta P2          ; Disable APU Frame IRQ
-  lda #$0F
+  lda #$00
   sta SNDCHN      ; Disable DMC playback, initialize other channels
 
 vwait1:

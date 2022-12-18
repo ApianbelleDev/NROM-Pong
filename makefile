@@ -101,7 +101,7 @@ $(objdir)/%.o: $(objdir)/%.s
 	$(AS65) $(CFLAGS65) $< -o $@
 
 # Files that depend on .incbin'd files
-$(objdir)/main.o: $(objdir)/bggfx.chr $(objdir)/spritegfx.chr
+$(objdir)/main.o: 
 
 # This is an example of how to call a lookup table generator at
 # build time.  mktables.py itself is not included because the demo
